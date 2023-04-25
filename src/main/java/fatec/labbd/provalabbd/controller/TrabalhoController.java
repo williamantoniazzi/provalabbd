@@ -20,7 +20,7 @@ import fatec.labbd.provalabbd.service.ITrabalhosService;
 public class TrabalhoController {
 
     @Autowired
-    private ITrabalhosService service;
+    public ITrabalhosService service;
 
     @GetMapping
     public List<Trabalho> buscarTodosTrabahos() {
