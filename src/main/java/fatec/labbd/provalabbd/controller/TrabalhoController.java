@@ -13,13 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fatec.labbd.provalabbd.entity.Trabalho;
 import fatec.labbd.provalabbd.service.ITrabalhosService;
+import fatec.labbd.provalabbd.service.TrabalhosSevice;
 
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/trabalho")
 public class TrabalhoController {
 
-    @Autowired
+    @Autowired(required=true)
     public ITrabalhosService service;
 
     @GetMapping
