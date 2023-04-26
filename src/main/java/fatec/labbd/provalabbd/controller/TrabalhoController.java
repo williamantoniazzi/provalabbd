@@ -13,15 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fatec.labbd.provalabbd.entity.Trabalho;
 import fatec.labbd.provalabbd.service.ITrabalhosService;
-import fatec.labbd.provalabbd.service.TrabalhosSevice;
 
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/trabalho")
 public class TrabalhoController {
 
-    @Autowired(required=true)
-    public ITrabalhosService service;
+    @Autowired
+    private ITrabalhosService service;
 
     @GetMapping
     public List<Trabalho> buscarTodosTrabahos() {
@@ -33,8 +32,8 @@ public class TrabalhoController {
         return service.novoTrabalho(trabalho);
     }
 
-    @GetMapping(value = "/id/{trabalho}")
-    public Trabalho buscarPorId(@PathVariable("trabalho") Long id) {
+    @GetMapping(value = "/{id}")
+    public Trabalho buscarPorId(@PathVariable("id") Long id) {
         return service.buscarPorId(id);
     }
     

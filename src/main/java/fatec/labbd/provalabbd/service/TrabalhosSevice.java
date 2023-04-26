@@ -10,7 +10,7 @@ import fatec.labbd.provalabbd.entity.Trabalho;
 import fatec.labbd.provalabbd.repository.Trabalhos;
 
 @Service
-public class TrabalhosSevice {
+public class TrabalhosSevice implements ITrabalhosService{
     
     @Autowired
     private Trabalhos trabRepo;
