@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import fatec.labbd.provalabbd.entity.Trabalho;
 
-@Repository
 public interface Trabalhos extends JpaRepository<Trabalho, Long>{
     
 }
