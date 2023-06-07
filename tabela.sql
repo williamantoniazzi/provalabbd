@@ -4,9 +4,9 @@ create schema if not EXISTS anotacao;
 
 use anotacao;
 
-create user 'dba'@localhost identified by 'pass123';
-
-grant select, insert, delete, update on anotacao.* to dba@'localhost';
+create user 'acesso'@'localhost' identified by 'pass123';
+flush privileges;
+grant select, insert, delete, update on anotacao.* to acesso@'localhost';
 
 create table tra_trabalho(
     tra_id bigint primary key auto_increment,
@@ -37,3 +37,19 @@ insert into lnc_lancamento(lnc_justificativa, lnc_data_hora_inicio, lnc_data_hor
   values('Trabalho 1', '2023-05-23 23:30', '2023-05-24 03:00', 'E');
 insert into lnc_lancamento(lnc_justificativa, lnc_data_hora_inicio, lnc_data_hora_fim, lnc_tipo)
   values('Trabalho 2', '2023-05-24 22:00', '2023-05-24 23:00', 'E');
+
+
+create table cns_consulta (
+  cns_id bigint unsigned not null auto_increment,
+  cns_descricao varchar(256) not null,
+  cns_data_hora datetime not null,
+  cns_duracao int not null,
+  primary key (cns_id)
+);
+
+insert into cns_consulta(cns_descricao, cns_data_hora, cns_duracao)
+  values('Primeira', '2023-05-23 19:10', 30);
+insert into cns_consulta(cns_descricao, cns_data_hora, cns_duracao)
+  values('Retorno', '2023-06-10 15:50', 10);
+insert into cns_consulta(cns_descricao, cns_data_hora, cns_duracao)
+  values('Segunda', '2023-06-23 13:30', 20);
